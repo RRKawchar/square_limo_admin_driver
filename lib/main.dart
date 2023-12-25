@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:square_limo_admin_driver/common/core/routes/routes.dart';
 import 'package:square_limo_admin_driver/common/core/theme/app_theme.dart';
 import 'package:square_limo_admin_driver/common/core/utils/app_constants.dart';
@@ -18,6 +19,7 @@ Future<void> main() async{
       DeviceOrientation.portraitDown,
     ],
   );
+  await GetStorage.init(AppConstants.appPackage);
 
   runApp(const MyApp());
 }

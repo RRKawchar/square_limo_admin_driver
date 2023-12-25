@@ -5,6 +5,12 @@ Color kScaffoldBackgroundColor=const Color(0xFF0E0C1D);
 Color kHotPinkColor=const Color(0xFFFF55B2);
 
 
+Color kBlack=Colors.black;
+Color kWhite=Colors.white;
+Color kSelectionBorderColor=const Color(0xFF7C7C7C);
+Color kBlackLight =const Color(0xFF303030);
+
+
 Map<int, Color> materialColor = const {
   50: Color.fromRGBO(241, 167, 205, .1),
   100: Color.fromRGBO(241, 167, 205, .2),
