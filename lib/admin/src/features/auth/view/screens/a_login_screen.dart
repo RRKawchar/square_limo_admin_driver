@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:square_limo_admin_driver/admin/src/features/auth/view/widgets/login_text_and_underline_widget.dart';
+import 'package:square_limo_admin_driver/admin/src/features/auth/view/widgets/a_text_with_underline_widget.dart';
 import 'package:square_limo_admin_driver/common/core/extensions/build_context_extensions.dart';
+import 'package:square_limo_admin_driver/common/core/helpers/validators.dart';
+import 'package:square_limo_admin_driver/common/core/routes/routes.dart';
 import 'package:square_limo_admin_driver/common/core/utils/app_assets.dart';
 import 'package:square_limo_admin_driver/common/core/utils/app_colors.dart';
 import 'package:square_limo_admin_driver/common/core/utils/text_style.dart';
@@ -64,12 +66,16 @@ class _ALoginScreenState extends State<ALoginScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         /// Login and Under Line
-                        const LoginTextAndUnderLineWidget(),
+                        const ATextWithUnderLineWidget(
+                          text: "Login",
+                          width: 36,
+                        ),
 
                         SizedBox(height: context.screenHeight * 0.05),
 
                         /// Login Email Field
                         KTextFormFieldWithTitle(
+                          validator: Validators.emailValidator,
                           textInputAction: TextInputAction.next,
                           title: "User Email",
                           controller: emailController,
@@ -80,9 +86,13 @@ class _ALoginScreenState extends State<ALoginScreen> {
 
                         /// Login Password Field
                         KTextFormFieldWithTitle(
+                          validator: Validators.passwordValidator,
+                          maxLines: 1,
                           textInputAction: TextInputAction.done,
+                          textInputType: TextInputType.visiblePassword,
                           title: "Password",
-                          controller: emailController,
+                          obscureText: true,
+                          controller: passwordController,
                           filled: true,
                           suffixIcon: IconButton(
                             onPressed: () {},
@@ -102,14 +112,8 @@ class _ALoginScreenState extends State<ALoginScreen> {
 
                         /// Login button
                         KButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Login",
-                            style: AppTextStyle.ralewayStyle(
-                                fontSize: 18,
-                                color: kBlack,
-                                fontWeight: FontWeight.w600),
-                          ),
+                          onPressed: onLogin,
+                          child: Text("Login", style: context.buttonTextStyle),
                         ),
                       ],
                     ),
@@ -122,6 +126,12 @@ class _ALoginScreenState extends State<ALoginScreen> {
       ),
     );
   }
+
+  void onLogin() {
+    if (loginKey.currentState!.validate()) {
+      Get.offAllNamed(RouteGenerator.aDashboard);
+    }
+  }
 }
 
 class _ForgetPasswordButton extends StatelessWidget {
@@ -133,7 +143,7 @@ class _ForgetPasswordButton extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: () {},
+        onTap: () => Get.toNamed(RouteGenerator.aForgetPassword),
         child: Text(
           "Forget Password",
           style: AppTextStyle.ralewayStyle(

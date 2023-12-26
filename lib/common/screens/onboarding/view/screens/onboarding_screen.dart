@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:square_limo_admin_driver/common/core/extensions/build_context_extensions.dart';
 import 'package:square_limo_admin_driver/common/core/routes/routes.dart';
-import 'package:square_limo_admin_driver/common/core/utils/app_colors.dart';
-import 'package:square_limo_admin_driver/common/core/utils/text_style.dart';
 import 'package:square_limo_admin_driver/common/core/widgets/k_button.dart';
 import 'package:square_limo_admin_driver/common/screens/onboarding/view/widgets/onboarding_contant_widget.dart';
 
@@ -36,11 +34,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 width: context.screenWidth * 0.4,
                 child: Text(
                   "Get Started",
-                  style: AppTextStyle.ralewayStyle(
-                    color: kBlack,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style:context.buttonTextStyle
                 ),
               ),
             ),

@@ -5,6 +5,7 @@ import 'package:square_limo_admin_driver/common/core/utils/text_style.dart';
 
 class KTextFormFieldWithTitle extends StatelessWidget {
   final TextEditingController controller;
+  final FormFieldValidator? validator;
   final int? maxLines;
   final int? minLines;
   final VoidCallback? onTap;
@@ -21,7 +22,7 @@ class KTextFormFieldWithTitle extends StatelessWidget {
   const KTextFormFieldWithTitle({
     super.key,
     required this.controller,
-    this.maxLines,
+    this.maxLines=1,
     this.onTap,
     this.obscureText = false,
     this.filled,
@@ -33,6 +34,7 @@ class KTextFormFieldWithTitle extends StatelessWidget {
     this.textInputAction,
     this.suffixIcon,
     this.prefixIconData,
+    this.validator,
   });
 
   @override
@@ -55,6 +57,7 @@ class KTextFormFieldWithTitle extends StatelessWidget {
           onTap: onTap,
           controller: controller,
           textAlign: TextAlign.start,
+          validator: validator,
           maxLines: maxLines,
           minLines: minLines,
           textInputAction: textInputAction,

@@ -11,7 +11,7 @@ brightness: Brightness.dark,
   primaryColor: kPrimaryColor,
   scaffoldBackgroundColor:kScaffoldBackgroundColor,
   useMaterial3: true,
- appBarTheme: AppBarTheme(
+ appBarTheme: const AppBarTheme(
 
  )
 );

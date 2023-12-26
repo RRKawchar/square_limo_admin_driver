@@ -9,6 +9,7 @@ Color kBlack=Colors.black;
 Color kWhite=Colors.white;
 Color kSelectionBorderColor=const Color(0xFF7C7C7C);
 Color kBlackLight =const Color(0xFF303030);
+Color kGreyLight=const Color(0xFFe7e7e6);
 
 
 Map<int, Color> materialColor = const {
