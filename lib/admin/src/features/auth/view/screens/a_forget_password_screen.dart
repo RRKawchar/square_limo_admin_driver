@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:square_limo_admin_driver/admin/src/features/auth/view/screens/a_otp_verification_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/auth/view/widgets/a_back_button_wrapper_widget.dart';
-import 'package:square_limo_admin_driver/admin/src/features/auth/view/widgets/a_text_with_underline_widget.dart';
+import 'package:square_limo_admin_driver/common/core/widgets/text_with_underline_widget.dart';
 import 'package:square_limo_admin_driver/common/core/extensions/build_context_extensions.dart';
 import 'package:square_limo_admin_driver/common/core/helpers/validators.dart';
 import 'package:square_limo_admin_driver/common/core/routes/routes.dart';
@@ -46,7 +46,7 @@ class _AForgetPasswordScreenState extends State<AForgetPasswordScreen> {
                   size: context.screenHeight * 0.18,
                 ),
                 SizedBox(height: context.screenHeight * 0.05),
-                const ATextWithUnderLineWidget(
+                const TextWithUnderLineWidget(
                   text: "Forget Password",
                   width: 50,
                 ),

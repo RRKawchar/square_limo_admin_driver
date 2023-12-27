@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:square_limo_admin_driver/admin/src/features/auth/view/widgets/a_text_with_underline_widget.dart';
+import 'package:square_limo_admin_driver/common/core/widgets/text_with_underline_widget.dart';
 import 'package:square_limo_admin_driver/common/core/extensions/build_context_extensions.dart';
+import 'package:square_limo_admin_driver/common/core/helpers/validators.dart';
 import 'package:square_limo_admin_driver/common/core/routes/routes.dart';
+import 'package:square_limo_admin_driver/common/core/services/dialog_services.dart';
 import 'package:square_limo_admin_driver/common/core/widgets/k_button.dart';
 import 'package:square_limo_admin_driver/common/core/widgets/k_text_form_field_with_title.dart';
 
@@ -19,6 +21,13 @@ class _AResetPasswordScreenState extends State<AResetPasswordScreen> {
   final confirmPassController = TextEditingController();
 
   @override
+  void dispose() {
+    newPassController.dispose();
+    confirmPassController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -32,10 +41,11 @@ class _AResetPasswordScreenState extends State<AResetPasswordScreen> {
                   SizedBox(height: context.screenHeight * 0.2),
 
                   /// Credential with Underline
-                  const ATextWithUnderLineWidget(text: "Credential", width: 44),
+                  const TextWithUnderLineWidget(text: "Credential", width: 44),
                   SizedBox(height: context.screenHeight * 0.04),
 
                   KTextFormFieldWithTitle(
+                    validator: Validators.passwordValidator,
                     title: "New Password",
                     controller: newPassController,
                     filled: true,
@@ -45,6 +55,7 @@ class _AResetPasswordScreenState extends State<AResetPasswordScreen> {
                   ),
                   SizedBox(height: context.screenHeight * 0.03),
                   KTextFormFieldWithTitle(
+                    validator: Validators.passwordValidator,
                     title: "Confirm Password",
                     controller: confirmPassController,
                     filled: true,
@@ -71,6 +82,14 @@ class _AResetPasswordScreenState extends State<AResetPasswordScreen> {
   }
 
   void onUpdate() {
-    Get.offAllNamed(RouteGenerator.aDashboard);
+    if (_resetFormKey.currentState!.validate()) {
+      if (newPassController.text.toString() ==
+          confirmPassController.text.toString()) {
+        Get.offAllNamed(RouteGenerator.aDashboard);
+      } else {
+        DialogServices.flutterToastDialogMessage(
+            message: "New password and confirm password does not match!");
+      }
+    }
   }
 }

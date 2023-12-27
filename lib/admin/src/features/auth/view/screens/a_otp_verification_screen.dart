@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:square_limo_admin_driver/admin/src/features/auth/view/widgets/a_back_button_wrapper_widget.dart';
 import 'package:square_limo_admin_driver/admin/src/features/auth/view/widgets/pin_code_field_widget.dart';
-import 'package:square_limo_admin_driver/admin/src/features/auth/view/widgets/a_text_with_underline_widget.dart';
+import 'package:square_limo_admin_driver/common/core/widgets/text_with_underline_widget.dart';
 import 'package:square_limo_admin_driver/common/core/extensions/build_context_extensions.dart';
 import 'package:square_limo_admin_driver/common/core/helpers/validators.dart';
 import 'package:square_limo_admin_driver/common/core/routes/routes.dart';
@@ -44,7 +44,7 @@ class _AOtpVerificationScreenState extends State<AOtpVerificationScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: context.screenHeight * 0.2),
-                const ATextWithUnderLineWidget(
+                const TextWithUnderLineWidget(
                   text: "OTP Verification",
                   width: 44,
                 ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:square_limo_admin_driver/admin/src/features/auth/view/widgets/a_text_with_underline_widget.dart';
+import 'package:square_limo_admin_driver/common/core/widgets/text_with_underline_widget.dart';
 import 'package:square_limo_admin_driver/common/core/extensions/build_context_extensions.dart';
 import 'package:square_limo_admin_driver/common/core/helpers/validators.dart';
 import 'package:square_limo_admin_driver/common/core/routes/routes.dart';
@@ -66,7 +66,7 @@ class _ALoginScreenState extends State<ALoginScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         /// Login and Under Line
-                        const ATextWithUnderLineWidget(
+                        const TextWithUnderLineWidget(
                           text: "Login",
                           width: 36,
                         ),

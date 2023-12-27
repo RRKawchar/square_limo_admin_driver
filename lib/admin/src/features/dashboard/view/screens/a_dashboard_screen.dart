@@ -1,44 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:square_limo_admin_driver/common/core/utils/app_colors.dart';
+import 'package:get/get.dart';
+import 'package:square_limo_admin_driver/admin/src/features/dashboard/view/widgets/a_bottom_navbar_chat_item_widget.dart';
+import 'package:square_limo_admin_driver/admin/src/features/dashboard/view/widgets/a_dashboard_bottom_navbar.dart';
+import 'package:square_limo_admin_driver/admin/src/features/dashboard/view_model/a_dashboard_view_model.dart';
+import 'package:square_limo_admin_driver/admin/src/features/home/view/screens/home_screen.dart';
 
 class ADashboardScreen extends StatefulWidget {
-  const ADashboardScreen({super.key});
+  const ADashboardScreen({
+    super.key,
+  });
 
   @override
   State<ADashboardScreen> createState() => _ADashboardScreenState();
 }
 
 class _ADashboardScreenState extends State<ADashboardScreen> {
+  final ADashboardViewModel dashboardViewModel =
+      Get.find<ADashboardViewModel>();
+
+  final pages = [
+    HomeScreen(),
+    const Center(
+      child: Text("Request"),
+    ),
+    const Center(
+      child: Text("Notification"),
+    ),
+    const Center(
+      child: Text("Profile"),
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const SafeArea(
-        child: Center(
-          child: Text("Admin Dashboard"),
-        ),
-      ),
-      bottomNavigationBar: Container(
-        alignment: Alignment.center,
-        height: 64,
-        decoration: BoxDecoration(
-          color: kBlack,
-          borderRadius: const BorderRadius.vertical(
-            top: Radius.circular(10),
+    return Obx(
+      () {
+        return Scaffold(
+          body: SafeArea(
+            child: pages[dashboardViewModel.currentIndex],
           ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Container(
-              alignment: Alignment.center,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [],
-              ),
-            )
-          ],
-        ),
-      ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: const ABottomNavBarChatItemWidget(),
+          bottomNavigationBar: ADashboardBottomNavBar(
+            dashboardViewModel: dashboardViewModel,
+          ),
+        );
+      },
     );
   }
 }

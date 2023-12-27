@@ -3,6 +3,7 @@ import 'package:square_limo_admin_driver/admin/src/features/auth/view/screens/a_
 import 'package:square_limo_admin_driver/admin/src/features/auth/view/screens/a_forget_password_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/auth/view/screens/a_otp_verification_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/auth/view/screens/a_reset_password_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/chat/view/screens/a_chat_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/dashboard/view/screens/a_dashboard_screen.dart';
 import 'package:square_limo_admin_driver/common/screens/onboarding/view/screens/onboarding_screen.dart';
 import 'package:square_limo_admin_driver/common/screens/selection_panel/view/screens/selection_screen.dart';
@@ -20,6 +21,7 @@ class RouteGenerator {
   static const String aForgetPassword = "/aForgetPassword";
   static const String aOtpVerification = "/a-otp-verification";
   static const String aResetPasswordScreen = "/a-reset-password-screen";
+  static const String aChatScreen = "/a-chat-screen";
 
   static final routes = [
     GetPage(
@@ -55,6 +57,10 @@ class RouteGenerator {
     GetPage(
       name: RouteGenerator.aResetPasswordScreen,
       page: () => const AResetPasswordScreen(),
+    ),
+    GetPage(
+      name: RouteGenerator.aChatScreen,
+      page: () => const AChatScreen(),
     ),
   ];
 }
