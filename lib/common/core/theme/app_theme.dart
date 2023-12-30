@@ -24,7 +24,7 @@ brightness: Brightness.dark,
 
  ),
 
- textTheme:GoogleFonts.ralewayTextTheme(Typography.whiteCupertino)
+ // textTheme:GoogleFonts.ralewayTextTheme(Typography.whiteCupertino)
 );
 
 

@@ -7,11 +7,13 @@ class TextWithUnderLineWidget extends StatelessWidget {
   final String text;
   final double? width;
   final AlignmentGeometry? alignment;
+  final double fontSize;
   const TextWithUnderLineWidget({
     super.key,
     required this.text,
     this.width,
     this.alignment = Alignment.centerLeft,
+    this.fontSize=24,
   });
 
   @override
@@ -23,7 +25,7 @@ class TextWithUnderLineWidget extends StatelessWidget {
         children: [
           Text(
             text,
-            style: AppTextStyle.ralewayStyle(fontSize: 24),
+            style: AppTextStyle.ralewayStyle(fontSize: fontSize),
           ),
           SizedBox(
             height: context.screenHeight * 0.003,

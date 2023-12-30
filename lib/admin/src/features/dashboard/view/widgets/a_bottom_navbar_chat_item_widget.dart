@@ -12,7 +12,7 @@ class ABottomNavBarChatItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()=>Get.toNamed(RouteGenerator.aChatScreen),
+      onTap: () => Get.toNamed(RouteGenerator.aChatScreen),
       child: Padding(
         padding: const EdgeInsets.only(right: 18),
         child: Container(
@@ -32,9 +32,7 @@ class ABottomNavBarChatItemWidget extends StatelessWidget {
                   height: 24,
                   width: 24,
                 ),
-                const SizedBox(
-                  height: 2,
-                ),
+                const SizedBox(height: 2),
                 Text(
                   "Chat",
                   style: context.appTextTheme.bodySmall?.copyWith(

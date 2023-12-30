@@ -9,7 +9,7 @@ class HomePanelCardItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
+    return SizedBox(
       height: 600,
       child: GridView.count(
         shrinkWrap: true,
@@ -19,10 +19,11 @@ class HomePanelCardItemWidget extends StatelessWidget {
         mainAxisSpacing: 15.0,
         children: List.generate(
           choiceList.length,
-              (index) => Container(
+          (index) => Container(
             decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(10)),
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -39,9 +40,10 @@ class HomePanelCardItemWidget extends StatelessWidget {
                 Text(
                   choiceList[index].title,
                   style: AppTextStyle.ralewayStyle(
-                      fontSize: 16,
-                      color: _setTextColor(index)),
-                )
+                    fontSize: 16,
+                    color: _setTextColor(index),
+                  ),
+                ),
               ],
             ),
           ),

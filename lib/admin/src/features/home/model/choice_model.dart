@@ -1,5 +1,3 @@
-
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:square_limo_admin_driver/common/core/utils/app_assets.dart';
 
 class ChoiceModel {
