@@ -1,12 +1,11 @@
 import 'package:get/get.dart';
+import 'package:square_limo_admin_driver/admin/src/features/home/model/new_request_model.dart';
 
 class AHomeViewModel extends GetxController{
 
    final _currentIndex = 0.obs;
    int get currentIndex => _currentIndex.value;
 
-   final _isDetails=false.obs;
-   bool get isDetails => _isDetails.value;
 
   final _staticsItemList = ["Complete Ride", "New Ride", "Cancel Ride"].obs;
 
@@ -17,9 +16,9 @@ class AHomeViewModel extends GetxController{
     _currentIndex.value=index;
   }
 
-  void requestDetailsCheck(){
-    _isDetails.value=!_isDetails.value;
-  }
+
+
+
 
 
 }

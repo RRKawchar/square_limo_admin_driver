@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:square_limo_admin_driver/admin/src/features/home/model/new_request_model.dart';
 import 'package:square_limo_admin_driver/admin/src/features/home/view/widgets/a_home_statistics_section.dart';
 import 'package:square_limo_admin_driver/admin/src/features/home/view/widgets/a_home_title_with_view_all_btn.dart';
 import 'package:square_limo_admin_driver/admin/src/features/home/view/widgets/a_home_top_item_widget.dart';
-import 'package:square_limo_admin_driver/admin/src/features/home/view/widgets/home_new_request_section.dart';
 import 'package:square_limo_admin_driver/admin/src/features/home/view/widgets/home_panel_card_item_widget.dart';
 import 'package:square_limo_admin_driver/admin/src/features/home/view_model/a_home_view_model.dart';
 import 'package:square_limo_admin_driver/common/core/extensions/build_context_extensions.dart';
-import 'package:square_limo_admin_driver/common/core/utils/app_colors.dart';
-import 'package:square_limo_admin_driver/common/core/utils/text_style.dart';
-import 'package:square_limo_admin_driver/common/core/widgets/custom_network_image.dart';
+import 'package:square_limo_admin_driver/common/core/routes/routes.dart';
+import 'package:square_limo_admin_driver/common/core/widgets/a_request_card_item_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,7 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
   PageController pageController = PageController();
 
   final _homeViewModel = Get.find<AHomeViewModel>();
-
 
   @override
   void initState() {
@@ -54,8 +50,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       /// Ride Status widget
                       const HomePanelCardItemWidget(),
 
-
-
                       /// Statistics view all
                       AHomeTitleWithViewAllBtn(
                         title: "Statistics",
@@ -69,16 +63,20 @@ class _HomeScreenState extends State<HomeScreen> {
                         pageController: pageController,
                       ),
 
-
                       /// New Request title with  View all Button
                       AHomeTitleWithViewAllBtn(
                         title: "New Request",
-                        onTap: () {},
+                        onTap: () => Get.toNamed(
+                          RouteGenerator.aRequestScreen,
+                        ),
                       ),
 
-
-                      /// Home New Request item and Pending Item Data
-                       const HomeNewRequestSection()
+                      /// Home New Request items
+                      const ARequestCardItemWidget(
+                        itemCount: 1,
+                        physics: NeverScrollableScrollPhysics(),
+                        padding: EdgeInsets.only(bottom: 0),
+                      ),
                     ],
                   ),
                 ),

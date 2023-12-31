@@ -5,10 +5,10 @@ Color kScaffoldBackgroundColor=const Color(0xFF0E0C1D);
 Color kHotPinkColor=const Color(0xFFFF55B2);
 
 
-Color kCompleteColor=Color(0xFF6BBE66);
-Color kPendingColor=Color(0xFFF1C232);
-Color kProgressColor=Color(0xFF01A9EA);
-Color kCancelColor=Color(0xFFE00928);
+Color kCompleteColor=const Color(0xFF6BBE66);
+Color kPendingColor=const Color(0xFFF1C232);
+Color kProgressColor=const Color(0xFF01A9EA);
+Color kCancelColor=const Color(0xFFE00928);
 
 
 Color kBlack=Colors.black;

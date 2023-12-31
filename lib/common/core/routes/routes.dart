@@ -4,7 +4,10 @@ import 'package:square_limo_admin_driver/admin/src/features/auth/view/screens/a_
 import 'package:square_limo_admin_driver/admin/src/features/auth/view/screens/a_otp_verification_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/auth/view/screens/a_reset_password_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/chat/view/screens/a_chat_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/complete/view/screen/ride_complete_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/dashboard/view/screens/a_dashboard_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/in_progress/view/screen/in_progress_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/request/view/screens/a_request_screen.dart';
 import 'package:square_limo_admin_driver/common/screens/onboarding/view/screens/onboarding_screen.dart';
 import 'package:square_limo_admin_driver/common/screens/selection_panel/view/screens/selection_screen.dart';
 import 'package:square_limo_admin_driver/common/screens/splash/view/screens/splash_screen.dart';
@@ -22,6 +25,9 @@ class RouteGenerator {
   static const String aOtpVerification = "/a-otp-verification";
   static const String aResetPasswordScreen = "/a-reset-password-screen";
   static const String aChatScreen = "/a-chat-screen";
+  static const String aRequestScreen = "/a-request-screen";
+  static const String aRideCompleteScreen = "/a-ride-complete-screen";
+  static const String aInProgressScreen = "/a-in-progress-screen";
 
   static final routes = [
     GetPage(
@@ -61,6 +67,20 @@ class RouteGenerator {
     GetPage(
       name: RouteGenerator.aChatScreen,
       page: () => const AChatScreen(),
+    ),
+    GetPage(
+      name: RouteGenerator.aRequestScreen,
+      page: () => const ARequestScreen(
+        isLeading: true,
+      ),
+    ),
+    GetPage(
+      name: RouteGenerator.aRideCompleteScreen,
+      page: () => const RideCompleteScreen(),
+    ),
+    GetPage(
+      name: RouteGenerator.aInProgressScreen,
+      page: () => const InProgressScreen(),
     ),
   ];
 }

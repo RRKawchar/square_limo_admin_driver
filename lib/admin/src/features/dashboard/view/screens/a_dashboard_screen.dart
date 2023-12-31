@@ -4,6 +4,7 @@ import 'package:square_limo_admin_driver/admin/src/features/dashboard/view/widge
 import 'package:square_limo_admin_driver/admin/src/features/dashboard/view/widgets/a_dashboard_bottom_navbar.dart';
 import 'package:square_limo_admin_driver/admin/src/features/dashboard/view_model/a_dashboard_view_model.dart';
 import 'package:square_limo_admin_driver/admin/src/features/home/view/screens/home_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/request/view/screens/a_request_screen.dart';
 
 class ADashboardScreen extends StatefulWidget {
   const ADashboardScreen({
@@ -19,9 +20,9 @@ class _ADashboardScreenState extends State<ADashboardScreen> {
       Get.find<ADashboardViewModel>();
 
   final pages = [
-    HomeScreen(),
-    const Center(
-      child: Text("Request"),
+    const HomeScreen(),
+     const ARequestScreen(
+        isLeading: false,
     ),
     const Center(
       child: Text("Notification"),
