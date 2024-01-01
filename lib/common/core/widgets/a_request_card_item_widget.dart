@@ -57,7 +57,7 @@ class _ARequestCardItemWidgetState extends State<ARequestCardItemWidget> {
                               height: 60,
                               width: 60,
                               fit: BoxFit.cover,
-                              image: newRequestList[index].image,
+                              image: rideDataList[index].image,
                               borderRadius: BorderRadius.circular(5),
                             ),
                             const SizedBox(width: 5),
@@ -65,12 +65,12 @@ class _ARequestCardItemWidgetState extends State<ARequestCardItemWidget> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  newRequestList[index].name,
+                                  rideDataList[index].name,
                                   style: AppTextStyle.ralewayStyle(fontSize: 14),
                                 ),
                                 const SizedBox(height: 5),
                                 Text(
-                                  newRequestList[index].phone,
+                                  rideDataList[index].phone,
                                   style: AppTextStyle.interStyle(),
                                 )
                               ],
@@ -95,11 +95,11 @@ class _ARequestCardItemWidgetState extends State<ARequestCardItemWidget> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Pick Up Date :${newRequestList[index].pickUpDate}",
+                        "Pick Up Date :${rideDataList[index].pickUpDate}",
                         style: AppTextStyle.ralewayStyle(fontSize: 12),
                       ),
                       Text(
-                        "Pick Up Time :${newRequestList[index].pickUpTime}",
+                        "Pick Up Time :${rideDataList[index].pickUpTime}",
                         style: AppTextStyle.ralewayStyle(fontSize: 12),
                       ),
                     ],
@@ -109,11 +109,11 @@ class _ARequestCardItemWidgetState extends State<ARequestCardItemWidget> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Email :${newRequestList[index].email}",
+                        "Email :${rideDataList[index].email}",
                         style: AppTextStyle.ralewayStyle(fontSize: 12),
                       ),
                       Text(
-                        "Service :${newRequestList[index].service}",
+                        "Service :${rideDataList[index].service}",
                         style: AppTextStyle.ralewayStyle(fontSize: 12),
                       ),
                     ],
@@ -124,15 +124,15 @@ class _ARequestCardItemWidgetState extends State<ARequestCardItemWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                                "Pick-Up Location:  ${newRequestList[index].pickUpLocation}"),
+                                "Pick-Up Location:  ${rideDataList[index].pickUpLocation}"),
                             const SizedBox(height: 5),
                             Text(
-                                "Drop-off Location:  ${newRequestList[index].dropOffLocation}"),
+                                "Drop-off Location:  ${rideDataList[index].dropOffLocation}"),
                             const SizedBox(height: 5),
                             Text(
-                                "Other Notes:  ${newRequestList[index].otherNote}"),
+                                "Other Notes:  ${rideDataList[index].otherNote}"),
                             const SizedBox(height: 5),
-                            Text("Fleet:  ${newRequestList[index].fleet}"),
+                            Text("Fleet:  ${rideDataList[index].fleet}"),
                           ],
                         )
                       : Container(),

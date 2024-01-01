@@ -1,44 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:square_limo_admin_driver/admin/src/features/complete/model/complete_model.dart';
-import 'package:square_limo_admin_driver/admin/src/features/complete/view/widgets/a_ride_complete_button_section.dart';
-import 'package:square_limo_admin_driver/admin/src/features/complete/view/widgets/complete_details_section.dart';
-import 'package:square_limo_admin_driver/admin/src/features/complete/view_model/a_complete_view_model.dart';
+import 'package:square_limo_admin_driver/admin/src/features/cancel_ride/view/widgets/cancel_details_section.dart';
+import 'package:square_limo_admin_driver/admin/src/features/cancel_ride/view/widgets/ride_cancel_button_section.dart';
+import 'package:square_limo_admin_driver/admin/src/features/cancel_ride/view_model/a_cancel_veiw_model.dart';
+import 'package:square_limo_admin_driver/admin/src/features/home/model/new_request_model.dart';
 import 'package:square_limo_admin_driver/common/core/extensions/build_context_extensions.dart';
 import 'package:square_limo_admin_driver/common/core/utils/app_colors.dart';
-import 'package:square_limo_admin_driver/common/core/utils/text_style.dart';
 import 'package:square_limo_admin_driver/common/core/widgets/k_custom_appbar_title_widget.dart';
 import 'package:square_limo_admin_driver/common/core/widgets/k_image_name_phone_widget.dart';
 
-class RideCompleteScreen extends StatefulWidget {
-  const RideCompleteScreen({super.key});
+class RideCancelScreen extends StatefulWidget {
+  const RideCancelScreen({super.key});
 
   @override
-  State<RideCompleteScreen> createState() => _RideCompleteScreenState();
+  State<RideCancelScreen> createState() => _RideCancelScreenState();
 }
 
-class _RideCompleteScreenState extends State<RideCompleteScreen> {
-  final completeViewModel = Get.find<ACompleteViewModel>();
+class _RideCancelScreenState extends State<RideCancelScreen> {
 
+
+  final cancelViewModel=Get.find<ACancelViewModel>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const KCustomAppbarTitleWidget(
-          title: "Complete Ride",
+          title: "Ride-Cancel",
         ),
       ),
+
       body: ListView.builder(
         shrinkWrap: true,
-        itemCount: completeRideList.length,
+        itemCount: rideDataList.length,
         itemBuilder: (context, index) {
-          final rideList = completeRideList[index];
-
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
             child: Obx(
-              () => Container(
-                height: completeViewModel.isSeeDetails[index]
+                  () => Container(
+                height: cancelViewModel.isSeeDetails[index]
                     ? 356
                     : context.screenHeight * 0.25,
                 decoration: BoxDecoration(
@@ -50,26 +49,26 @@ class _RideCompleteScreenState extends State<RideCompleteScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      /// Image , Name and Phone section
+                      /// Image, name, phone, and days widgets
                       KImageNamePhoneWidget(
-                        image: rideList.image,
-                        name: rideList.name,
-                        phone: rideList.phone,
+                        image: rideDataList[index].image,
+                        name: rideDataList[index].name,
+                        phone: rideDataList[index].phone,
                       ),
                       const SizedBox(height: 8),
-                      CompleteDetailsSection(
+
+                      /// Pickup date time, email, service, location, fleet, other notes
+                      CancelDetailsSection(
                         index: index,
-                        completeViewModel: completeViewModel,
+                        cancelViewModel: cancelViewModel,
                       ),
+
                       SizedBox(
-                        height: completeViewModel.isSeeDetails[index] ? 15 : 8,
+                        height: cancelViewModel.isSeeDetails[index] ? 15 : 8,
                       ),
 
                       /// See Details , Deny and Accept Button here
-                      ARideCompleteButtonSection(
-                        index: index,
-                        completeViewModel: completeViewModel,
-                      ),
+                      RideCancelButtonSection(cancelViewModel: cancelViewModel, index: index)
                     ],
                   ),
                 ),

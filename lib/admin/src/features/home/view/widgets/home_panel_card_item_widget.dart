@@ -79,11 +79,15 @@ class HomePanelCardItemWidget extends StatelessWidget {
         break;
 
       case 1:
-        Get.toNamed(RouteGenerator.aRequestScreen);
+        Get.toNamed(RouteGenerator.aPendingScreen);
         break;
 
       case 2:
         Get.toNamed(RouteGenerator.aInProgressScreen);
+        break;
+
+      case 3:
+        Get.toNamed(RouteGenerator.aRideCancelScreen);
         break;
 
       default:

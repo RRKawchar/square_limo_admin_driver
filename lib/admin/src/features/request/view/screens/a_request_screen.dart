@@ -23,7 +23,7 @@ class _ARequestScreenState extends State<ARequestScreen> {
         title:  const KCustomAppbarTitleWidget(title: "Request",)
       ),
       body: ARequestCardItemWidget(
-        itemCount: newRequestList.length,
+        itemCount: rideDataList.length,
         physics: const PageScrollPhysics(),
         padding: const EdgeInsets.symmetric(
           horizontal: 10,

@@ -1,4 +1,4 @@
-class NewRequestModel {
+class RideModel {
   final String name;
   final String image;
   final String phone;
@@ -11,7 +11,7 @@ class NewRequestModel {
   final String fleet;
   final String otherNote;
 
-  NewRequestModel({
+  RideModel({
     required this.name,
     required this.image,
     required this.phone,
@@ -26,8 +26,8 @@ class NewRequestModel {
   });
 }
 
-final List<NewRequestModel> newRequestList = [
-  NewRequestModel(
+final List<RideModel> rideDataList = [
+  RideModel(
     name: "Alex Michel",
     image:
         "https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp",
@@ -41,7 +41,7 @@ final List<NewRequestModel> newRequestList = [
     service: "Business Trip",
     otherNote: "Cash on hand",
   ),
-  NewRequestModel(
+  RideModel(
     name: "Riyazur Rohman Kawchar",
     image:
     "https://t3.ftcdn.net/jpg/05/68/99/80/360_F_568998040_m42feFA9RajqmuR5DTlWwox44fxE3MOi.jpg",
@@ -55,7 +55,7 @@ final List<NewRequestModel> newRequestList = [
     service: "Business Trip",
     otherNote: "Cash on hand",
   ),
-  NewRequestModel(
+  RideModel(
     name: "Alex Michel",
     image:
     "https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp",
