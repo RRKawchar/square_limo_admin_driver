@@ -69,6 +69,20 @@ final List<RideModel> rideDataList = [
     service: "Business Trip",
     otherNote: "Cash on hand",
   ),
+  RideModel(
+    name: "Alex Michel",
+    image:
+    "https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp",
+    phone: "012 365 9874",
+    pickUpDate: "25/11/2023",
+    pickUpTime: "10:30 am",
+    email: "yourmail@gmail.com",
+    pickUpLocation: "Dhaka Bangladesh",
+    dropOffLocation: "Chittagong, Bangladesh",
+    fleet: "1234",
+    service: "Business Trip",
+    otherNote: "Cash on hand",
+  ),
 ];
 
 

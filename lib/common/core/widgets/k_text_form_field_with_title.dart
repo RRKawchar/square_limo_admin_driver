@@ -18,6 +18,7 @@ class KTextFormFieldWithTitle extends StatelessWidget {
   final TextInputAction? textInputAction;
   final Widget? suffixIcon;
   final IconData? prefixIconData;
+  final Color titleColor;
 
   const KTextFormFieldWithTitle({
     super.key,
@@ -35,6 +36,7 @@ class KTextFormFieldWithTitle extends StatelessWidget {
     this.suffixIcon,
     this.prefixIconData,
     this.validator,
+    this.titleColor=const Color(0xFFF1A7CD),
   });
 
   @override
@@ -46,7 +48,7 @@ class KTextFormFieldWithTitle extends StatelessWidget {
         Text(
           title ?? "",
           style: AppTextStyle.ralewayStyle(
-            color: kPrimaryColor,
+            color: titleColor,
             fontSize: 14,
           ),
         ),

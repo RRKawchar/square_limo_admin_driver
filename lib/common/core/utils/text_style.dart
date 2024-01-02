@@ -15,12 +15,12 @@ class AppTextStyle {
   }
 
 
-  static TextStyle interStyle(){
+  static TextStyle interStyle({Color color=Colors.white,double fontSize=14.0,FontWeight fontWeight=FontWeight.w500}){
 
     return GoogleFonts.inter(
-         fontSize: 14,
-      fontWeight: FontWeight.w500,
-      color: kWhite,
+         fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
     );
   }
 

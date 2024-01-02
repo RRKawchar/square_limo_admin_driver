@@ -7,9 +7,12 @@ import 'package:square_limo_admin_driver/admin/src/features/cancel_ride/view/scr
 import 'package:square_limo_admin_driver/admin/src/features/chat/view/screens/a_chat_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/complete/view/screen/ride_complete_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/dashboard/view/screens/a_dashboard_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/driver/view/screens/a_diver_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/driver/view/screens/driver_add_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/in_progress/view/screen/in_progress_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/pending/view/screen/a_pending_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/request/view/screens/a_request_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/user/view/screen/user_screen.dart';
 import 'package:square_limo_admin_driver/common/screens/onboarding/view/screens/onboarding_screen.dart';
 import 'package:square_limo_admin_driver/common/screens/selection_panel/view/screens/selection_screen.dart';
 import 'package:square_limo_admin_driver/common/screens/splash/view/screens/splash_screen.dart';
@@ -31,7 +34,10 @@ class RouteGenerator {
   static const String aRideCompleteScreen = "/a-ride-complete-screen";
   static const String aInProgressScreen = "/a-in-progress-screen";
   static const String aPendingScreen = "/a-pending_screen";
-  static const String aRideCancelScreen="/a-cancel-ride";
+  static const String aRideCancelScreen = "/a-cancel-ride";
+  static const String aUserScreen = "/a-user-screen";
+  static const String aDriverScreen = "/a-driver-screen";
+  static const String driverAddScreen = "/driver-add-screen";
 
   static final routes = [
     GetPage(
@@ -89,11 +95,22 @@ class RouteGenerator {
     GetPage(
       name: RouteGenerator.aPendingScreen,
       page: () => const APendingScreen(),
-    ),GetPage(
+    ),
+    GetPage(
       name: RouteGenerator.aRideCancelScreen,
       page: () => const RideCancelScreen(),
     ),
-
-
+    GetPage(
+      name: RouteGenerator.aUserScreen,
+      page: () => const UserScreen(),
+    ),
+    GetPage(
+      name: RouteGenerator.aDriverScreen,
+      page: () => const ADriverScreen(),
+    ),
+    GetPage(
+      name: RouteGenerator.driverAddScreen,
+      page: () => const DriverAddScreen(),
+    ),
   ];
 }
