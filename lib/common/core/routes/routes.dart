@@ -12,6 +12,7 @@ import 'package:square_limo_admin_driver/admin/src/features/driver/view/screens/
 import 'package:square_limo_admin_driver/admin/src/features/in_progress/view/screen/in_progress_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/pending/view/screen/a_pending_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/request/view/screens/a_request_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/statistics/view/screen/statistics_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/user/view/screen/user_screen.dart';
 import 'package:square_limo_admin_driver/common/screens/onboarding/view/screens/onboarding_screen.dart';
 import 'package:square_limo_admin_driver/common/screens/selection_panel/view/screens/selection_screen.dart';
@@ -38,6 +39,7 @@ class RouteGenerator {
   static const String aUserScreen = "/a-user-screen";
   static const String aDriverScreen = "/a-driver-screen";
   static const String driverAddScreen = "/driver-add-screen";
+  static const String statisticsScreen="/statistics-screen";
 
   static final routes = [
     GetPage(
@@ -109,8 +111,8 @@ class RouteGenerator {
       page: () => const ADriverScreen(),
     ),
     GetPage(
-      name: RouteGenerator.driverAddScreen,
-      page: () => const DriverAddScreen(),
+      name: RouteGenerator.statisticsScreen,
+      page: () => const StatisticsScreen(),
     ),
   ];
 }

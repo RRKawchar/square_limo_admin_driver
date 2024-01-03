@@ -16,6 +16,7 @@ class AppAssets {
   static const String drawerIcon="assets/icons/drawer.svg";
   static const String userIcon="assets/icons/User.svg";
   static const String dashboardDriverIcon="assets/icons/home_driver_icon.svg";
+  static const String filterIcon="assets/icons/filter_icon.svg";
 
 
   static const String completeIcon="assets/icons/complete.svg";

@@ -53,7 +53,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       /// Statistics view all
                       AHomeTitleWithViewAllBtn(
                         title: "Statistics",
-                        onTap: () {},
+                        onTap: () =>
+                            Get.toNamed(RouteGenerator.statisticsScreen),
                       ),
                       const SizedBox(height: 5),
 
@@ -66,9 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       /// New Request title with  View all Button
                       AHomeTitleWithViewAllBtn(
                         title: "New Request",
-                        onTap: () => Get.toNamed(
-                          RouteGenerator.aRequestScreen,
-                        ),
+                        onTap: () => Get.toNamed(RouteGenerator.aRequestScreen),
                       ),
 
                       /// Home New Request items

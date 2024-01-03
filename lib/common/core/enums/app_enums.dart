@@ -15,3 +15,10 @@ enum MessageStatus {
   notView,
   viewed,
 }
+
+
+enum NotificationType{
+
+  driver,
+  user,
+}

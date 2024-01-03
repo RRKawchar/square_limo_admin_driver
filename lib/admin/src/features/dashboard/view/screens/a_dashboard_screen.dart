@@ -4,7 +4,9 @@ import 'package:square_limo_admin_driver/admin/src/features/dashboard/view/widge
 import 'package:square_limo_admin_driver/admin/src/features/dashboard/view/widgets/a_dashboard_bottom_navbar.dart';
 import 'package:square_limo_admin_driver/admin/src/features/dashboard/view_model/a_dashboard_view_model.dart';
 import 'package:square_limo_admin_driver/admin/src/features/home/view/screens/home_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/notification/view/screen/a_notification_screen.dart';
 import 'package:square_limo_admin_driver/admin/src/features/request/view/screens/a_request_screen.dart';
+import 'package:square_limo_admin_driver/admin/src/features/statistics/view/screen/statistics_screen.dart';
 
 class ADashboardScreen extends StatefulWidget {
   const ADashboardScreen({
@@ -21,15 +23,11 @@ class _ADashboardScreenState extends State<ADashboardScreen> {
 
   final pages = [
     const HomeScreen(),
-     const ARequestScreen(
-        isLeading: false,
+    const ARequestScreen(
+      isLeading: false,
     ),
-    const Center(
-      child: Text("Notification"),
-    ),
-    const Center(
-      child: Text("Profile"),
-    ),
+    const ANotificationScreen(),
+     const StatisticsScreen()
   ];
 
   @override
