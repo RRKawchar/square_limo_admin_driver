@@ -6,22 +6,28 @@ import 'package:square_limo_admin_driver/common/core/utils/text_style.dart';
 import 'package:square_limo_admin_driver/common/core/widgets/custom_network_image.dart';
 
 class AHomeScreenTopItemWidget extends StatelessWidget {
-  const AHomeScreenTopItemWidget({super.key});
+  final VoidCallback onTap;
+  const AHomeScreenTopItemWidget({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
+
     return  SizedBox(
       height: context.screenHeight*0.05,
+
       child: Padding(
         padding: const EdgeInsets.only(left: 15),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SvgPicture.asset(
-              AppAssets.drawerIcon,
-              height: 20,
-              width: 40,
+            GestureDetector(
+              onTap: onTap,
+              child: SvgPicture.asset(
+                AppAssets.drawerIcon,
+                height: 20,
+                width: 40,
+              ),
             ),
             const SizedBox(width: 10,),
             CustomNetworkImage(
@@ -37,6 +43,8 @@ class AHomeScreenTopItemWidget extends StatelessWidget {
           ],
         ),
       ),
+
     );
+
   }
 }

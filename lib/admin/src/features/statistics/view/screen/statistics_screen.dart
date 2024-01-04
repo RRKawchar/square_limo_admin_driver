@@ -99,7 +99,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                       },
                     ),
                   ),
-                 StatisticsPopupMenuButton()
+                 const StatisticsPopupMenuButton()
                 ],
               ),
             ),

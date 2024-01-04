@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:square_limo_admin_driver/admin/src/features/home/view/widgets/a_home_drawer_section.dart';
 import 'package:square_limo_admin_driver/admin/src/features/home/view/widgets/a_home_statistics_section.dart';
 import 'package:square_limo_admin_driver/admin/src/features/home/view/widgets/a_home_title_with_view_all_btn.dart';
 import 'package:square_limo_admin_driver/admin/src/features/home/view/widgets/a_home_top_item_widget.dart';
@@ -18,6 +19,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   PageController pageController = PageController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final _homeViewModel = Get.find<AHomeViewModel>();
 
@@ -34,11 +36,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: const AHomeDrawerSection(),
       body: SafeArea(
         child: Column(
           children: [
             /// Top image and name
-            const AHomeScreenTopItemWidget(),
+            AHomeScreenTopItemWidget(
+              onTap: () {
+                _scaffoldKey.currentState?.openDrawer();
+              },
+            ),
 
             SizedBox(
               height: context.screenHeight * 0.82,
